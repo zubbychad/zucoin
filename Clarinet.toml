@@ -1,0 +1,28 @@
+[project]
+name = 'zucoin'
+description = 'Zucoin SIP-010 fungible token smart contract (Clarity)'
+authors = []
+telemetry = true
+cache_dir = '.\.cache'
+requirements = []
+[contracts.sip-010-ft-trait]
+path = 'contracts/sip-010-ft-trait.clar'
+clarity_version = 3
+epoch = 'latest'
+
+[contracts.zucoin]
+path = 'contracts/zucoin.clar'
+clarity_version = 3
+epoch = 'latest'
+[repl.analysis]
+passes = ['check_checker']
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
+
+[repl.remote_data]
+enabled = false
+api_url = 'https://api.hiro.so'
